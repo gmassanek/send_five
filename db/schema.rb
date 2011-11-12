@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20111112180126) do
     t.integer  "giver_id"
     t.integer  "receiver_id"
     t.string   "message"
-    t.boolean  "random?",     :default => false
+    t.boolean  "random",      :default => false
     t.string   "thank_you"
     t.datetime "created_at"
     t.datetime "updated_at"

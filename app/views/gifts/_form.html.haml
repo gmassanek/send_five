@@ -1,0 +1,12 @@
+= form_for(@gift) do |form|
+  Giver #{form.text_field :giver_id}
+  %br
+  Receiver #{form.text_field :receiver_id}
+  %br
+  = form.label :message
+  = form.text_field :message
+  %br
+  = label_tag :vendor
+  = collection_select :vendor, :id, @vendors, :id, :name 
+  %br
+  = form.submit

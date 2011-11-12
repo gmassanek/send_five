@@ -22,5 +22,9 @@ Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 7)
 Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 5)
 Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 3)
 Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 9)
+Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 2349)
+Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 923423)
+Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 92342)
+Code.create(:vendor => Vendor.all.shuffle.first, :code_number => 9987)
 
 puts "Created #{Code.count} Codes"
