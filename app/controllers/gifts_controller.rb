@@ -7,10 +7,11 @@ class GiftsController < ApplicationController
 
   def create
     @gift = Gift.new params[:gift]
-    @gift.code = Code.available.where(:vendor_id => params[:vendor][:id]).first
+    @gift.vendor = Vendor.find params[:vendor][:id]
     if @gift.save
       redirect_to gifts_path
     else
+      @vendors = Vendor.available
       render :new
     end
 

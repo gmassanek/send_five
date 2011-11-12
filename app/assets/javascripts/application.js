@@ -7,3 +7,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(function() {
+
+  $("#gift_message").keyup(function() {
+    var length = 160;
+    //length = length - $("user_name").length
+    length = length - $("#gift_message").val().length
+    $("#text_char_count").html(length)
+  });
+
+})
