@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<h1>Send Five!</h1>
+	
+	<% if session[:user_id].present? %>
+	  <%= link_to "My Account", user_url(session[:user_id]) %> | <%= link_to "Sign Out", session_url(session[:user_id]), :method => "delete" %>
+	<% else %>
+	  <%= link_to "Sign In", new_session_url %>
+	<% end %>
+	
+	<hr>
 
 <%= yield %>
 
