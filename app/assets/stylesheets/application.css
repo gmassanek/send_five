@@ -5,3 +5,25 @@
  *= require_self
  *= require_tree . 
 */
+
+
+
+#header h1 {
+  font-family: 'Arvo', serif;
+  font-size: 50px;
+  /* font-family: 'Fjord One', serif; */
+}
+
+#header h1 .first{
+  font-weight: normal;
+  text-shadow: -1px 1px #006699;
+  color: #69D6FF;
+}
+
+
+#header h1 .second{
+  font-weight:bolder;
+  font-style:italic;
+  text-shadow: -1px 1px #006699;
+  color: #FFEF5C;
+}
