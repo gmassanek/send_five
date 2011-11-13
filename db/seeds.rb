@@ -12,7 +12,7 @@ Vendor.create(:name => "Snarfs")
 Vendor.create(:name => "Starbucks")
 Vendor.create(:name => "Motel Bar")
 Vendor.create(:name => "Humane Society", :charity => true)
-Vendor.create(:name => "Jim Dugans", :charity => true)
+Vendor.create(:name => "Red Cross", :charity => true)
 
 puts "Created #{Vendor.count} Vendors"
 
