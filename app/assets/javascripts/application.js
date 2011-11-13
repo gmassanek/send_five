@@ -14,7 +14,7 @@ $(function() {
     var length = 160;
     //length = length - $("user_name").length
     length = length - $("#gift_message").val().length
-    $("#text_char_count").html(length)
+    $("#text_char_count").html(length + " characters left")
   });
 
   $(".vendor_button").click(function(event) {
