@@ -3,8 +3,6 @@ class GiftsController < ApplicationController
   def new
     if params[:vendor].present?
       @gift = Gift.new
-      @gift.vendor = Vendor.find(params[:vendor][:id])
-      
     else
       @vendors = Vendor.available  
     end  
@@ -16,8 +14,15 @@ class GiftsController < ApplicationController
     if @receiver.nil?
       @receiver = User.create(params[:receiver])
     end
-      @giver = User.create(params[:giver])
+
+    @giver = User.create(params[:giver])
+
     @gift = Gift.new params[:gift]
+
+    @gift.vendor = Vendor.find(params[:vendor][:id])
+    @gift.receiver = @receiver
+    @gift.giver = @giver
+
     if @gift.save
       redirect_to gifts_path
     else

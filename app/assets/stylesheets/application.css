@@ -2,28 +2,69 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require reset
  *= require_self
- *= require_tree . 
+ * require_tree . 
 */
 
-
-
-#header h1 {
-  font-family: 'Arvo', serif;
-  font-size: 50px;
-  /* font-family: 'Fjord One', serif; */
+body {
+  background-image:url('bg-tile.gif');
 }
 
-#header h1 .first{
+h1 h2 h3 h4 h5 h6 { font-weight: bold; }
+
+.clr { clear:both }
+
+#header {
+}
+
+.content_wrapper {
+  width: 960px;
+  margin: 0 auto;
+  font-family: 'Arvo', serif;
+}
+
+#logo {
+  height: 55px;
+  padding: 10px;
+  font-family: 'Arvo', serif;
+  font-size: 50px;
+  float: left;
+}
+
+#logo .first{
   font-weight: normal;
-  text-shadow: -1px 1px #006699;
   color: #69D6FF;
 }
 
-
-#header h1 .second{
+#logo .second{
   font-weight:bolder;
   font-style:italic;
-  text-shadow: -1px 1px #006699;
   color: #FFEF5C;
+}
+
+#top_navigation {
+  float: right;
+  padding: 10px;
+  height: 25px;
+  margin-top: 15px;
+}
+
+#top_navigation a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+#top_navigation a:hover {
+  text-decoration: underline;
+}
+
+#home_banner {
+  height: 300px;
+}
+
+#main_content {
+  margin-top: -225px;
 }

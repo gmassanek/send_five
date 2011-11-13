@@ -3,6 +3,14 @@ class Gift < ActiveRecord::Base
 
   has_one :code
   has_one :vendor, :through => :code
+
+  has_one :receiver,
+          :class_name => 'User',
+          :foreign_key => 'receiver_id'
+  
+  has_one :giver,
+          :class_name => 'User',
+          :foreign_key => 'giver_id'
   
   before_create :associate_code
   after_create :send_texts
@@ -30,15 +38,15 @@ class Gift < ActiveRecord::Base
 
   def send_texts
     if vendor.charity?
-      TwilioHelper::send_text '+13128542448', '+14102272217', charity_text_message
+      TwilioHelper::send_text '+13128542448', receiver.phone_number, charity_text_message
     else
-      TwilioHelper::send_text '+13128542448', '+14102272217', text_message_1
-      TwilioHelper::send_text '+13128542448', '+14102272217', text_message_2
+      TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_1
+      TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_2
     end
   end
 
   def sender_name
-    "sender_name"
+    giver.first_name
   end
 
   def charity_text_message
@@ -46,7 +54,7 @@ class Gift < ActiveRecord::Base
   end
 
   def text_message_1
-    "#{sender_name} sent you $5 to #{vendor.name} through SendFive! #{sender_name} says:\n #{message}"
+    "#{receiver.first_name}, #{sender_name} sent you $5 to #{vendor.name} through SendFive! #{sender_name} says:\n #{message}"
   end
 
   def text_message_2

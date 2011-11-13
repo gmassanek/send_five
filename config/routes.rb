@@ -1,6 +1,6 @@
 SendFive::Application.routes.draw do
 
-  root :to => 'gifts#new'
+  root :to => 'pages#home'
   resources :gifts
   resources :users
   

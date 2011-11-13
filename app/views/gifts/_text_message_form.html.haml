@@ -13,5 +13,5 @@
   = form.text_area :message, :placeholder => "Happy Birthday, Cookie. Go buy yourself a cup of coffee on me. Talk soon!"
   %span#text_char_count 160
   %br
-  = form.hidden_field :vendor
+  = hidden_field :vendor, :id, :value => params[:vendor][:id]
   = form.submit
