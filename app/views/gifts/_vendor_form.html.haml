@@ -1,0 +1,6 @@
+= form_tag(new_gift_path, :method => "get") do 
+
+	= label_tag :vendor
+	= collection_select :vendor, :id, @vendors, :id, :name , :prompt => "Select a vendor or charity"
+	= submit_tag "Submit"
+	%br

@@ -1,13 +1,23 @@
 class GiftsController < ApplicationController
 
   def new
-    @gift = Gift.new
-    @vendors = Vendor.available
+    if params[:vendor].present?
+      @gift = Gift.new
+      @gift.vendor = Vendor.find(params[:vendor][:id])
+      
+    else
+      @vendors = Vendor.available  
+    end  
+
   end
 
   def create
+    @receiver = User.find_by_phone_number(params[:receiver][:phone_number])
+    if @receiver.nil?
+      @receiver = User.create(params[:receiver])
+    end
+      @giver = User.create(params[:giver])
     @gift = Gift.new params[:gift]
-    @gift.vendor = Vendor.find_by_id params[:vendor][:id]
     if @gift.save
       redirect_to gifts_path
     else

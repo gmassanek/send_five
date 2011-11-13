@@ -1,0 +1,17 @@
+
+= form_for(@gift) do |form|
+  - unless @gift.errors.empty?
+    %h3 There was a problem with the form
+    %ul
+      - @gift.errors.full_messages.each do |error|
+        %li= error
+  From #{text_field :giver, :first_name, :placeholder => "Johnny Appleseed"}
+  %br
+  To #{text_field :receiver, :first_name, :placeholder => "Cookie"} #{text_field :receiver, :phone_number, :placeholder => "(234) 123-2345"}
+  %br
+  = form.label :message
+  = form.text_area :message, :placeholder => "Happy Birthday, Cookie. Go buy yourself a cup of coffee on me. Talk soon!"
+  %span#text_char_count 160
+  %br
+  = form.hidden_field :vendor
+  = form.submit
