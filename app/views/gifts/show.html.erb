@@ -1,0 +1,16 @@
+<h1>Preview Your Message and Send!</h1></br>
+
+From: <%= @gift.giver.first_name %></br>
+To: <%= @gift.receiver.first_name %></br>
+Message: <% if @gift.vendor.charity %> 
+          <%= @gift.charity.text_message %>
+        <% else %>
+          <%= @gift.text_message_1 %></br>
+          <%= @gift.text_message_2 %></br>
+        <% end %>
+<hr>
+
+<h1>Make Someone's Day!</h1><br>
+
+<%= link_to "Pay and sendfiveNow", new_user_url %>
+
