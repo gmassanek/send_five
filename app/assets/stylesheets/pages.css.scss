@@ -5,3 +5,93 @@
   background: #6FB7E9;
   border-bottom: 1px solid #006699;
 }
+
+.home_page_image_container {
+  background: green;
+}
+
+.phone_image_wrapper {
+  margin-left: 10px;
+  width: 280px;
+  float:left;
+}
+
+img.home_iphone {
+  width: 280px;
+  height: 586px;
+}
+
+.actions_wrapper {
+  float:left;
+  width: 650px;
+  padding: 10px;
+  margin-top: 90px;
+}
+
+#purpose {
+  margin: 0 auto;
+  font-size: 32pt;
+  font-weight: bolder;
+  color: white;
+  text-shadow: 2px 2px #006699; 
+  text-align: center;
+}
+#tagline {
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 28pt;
+  font-weight: bolder;
+  color: #006699;
+  text-align: center;
+  text-shadow: 1px 1px #FFFFFF;
+}
+
+.actions_wrapper form {
+  width: 100px;
+  margin: 0 auto;
+}
+#new_gift_button {
+  width: 100px;
+  padding: 15px;
+}
+#learn_more_wrapper {
+  width: 100px;
+  margin: 0px auto;
+  text-align: center;
+}
+
+#learn_more {
+  font-size: 8pt;
+  color: #006699;
+  text-decoration: none;
+}
+
+#learn_more:hover{
+  text-decoration: underline;
+}
+
+#send_five_now_wrapper {
+  margin: 0px auto;
+  text-align: center;
+}
+
+#send_five_now_wrapper a{
+  display: block;
+  width: 250px;
+  margin: 10px auto 0px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(top, #FFEF5C, #F8FF92);
+  -webkit-box-shadow: inset 0 1px 0 #006699,inset 0 -1px 0 #006699;
+  box-shadow: inset 0 1px 0 #006699,inset 0 -1px 0 #006699, inset -1px 0 #006699,inset 1px 0 #006699;
+  color: #006699;
+  text-decoration: none;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  font: 24px/40px "Museo-700i",Georgia,serif;
+  padding: 16px 40px 12px 40px;
+}
+
+#send_five_now_wrapper a:hover {
+  background: -webkit-linear-gradient(top, #FFEF5C, #DFCD21);
+}
+
