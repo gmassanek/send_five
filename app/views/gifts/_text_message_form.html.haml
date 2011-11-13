@@ -5,13 +5,27 @@
     %ul
       - @gift.errors.full_messages.each do |error|
         %li= error
-  From #{text_field :giver, :first_name, :placeholder => "Johnny Appleseed"}
+  From: 
   %br
-  To #{text_field :receiver, :first_name, :placeholder => "Cookie"} #{text_field :receiver, :phone_number, :placeholder => "(234) 123-2345"}
+  #{text_field :giver, :first_name, :placeholder => "Johnny Appleseed"}
   %br
-  = form.label :message
+  %br
+  %br
+  To:
+  %br
+  #{text_field :receiver, :first_name, :placeholder => "Cookie"} 
+  %br
+  %br
+  Phone # (Not Yours!): 
+  %br
+  #{text_field :receiver, :phone_number, :placeholder => "(234) 123-2345"}
+  %br
+  %br
+  %br
+  = form.label "Personal Message:"
+  %br
   = form.text_area :message, :placeholder => "Happy Birthday, Cookie. Go buy yourself a cup of coffee on me. Talk soon!"
   %span#text_char_count 160
   %br
   = hidden_field :vendor, :id, :value => params[:vendor][:id]
-  = form.submit
+  = form.submit "Preview Message", :class => 'previewbutton'
