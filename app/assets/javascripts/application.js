@@ -25,4 +25,11 @@ $(function() {
     event.preventDefault();
   });
 
+  $("#logo").click(function() {
+    window.location.replace('/');
+  })
+  .mouseover(function() {
+    $("#logo").css('cursor', 'pointer');
+  });
+
 })
