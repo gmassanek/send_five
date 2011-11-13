@@ -1,4 +1,3 @@
-
 = form_for(@gift) do |form|
   - unless @gift.errors.empty?
     %h3 There was a problem with the form
@@ -6,26 +5,18 @@
       - @gift.errors.full_messages.each do |error|
         %li= error
   From: 
-  %br
-  #{text_field :giver, :first_name, :placeholder => "Johnny Appleseed"}
-  %br
-  %br
+  .inputs= text_field :giver, :first_name, :placeholder => "Johnny Appleseed"
   %br
   To:
+  .inputs
+    = text_field :receiver, :first_name, :placeholder => "Betty"
+    = text_field :receiver, :phone_number, :placeholder => "(234) 123-2345", :class => 'inline'
   %br
-  #{text_field :receiver, :first_name, :placeholder => "Cookie"} 
-  %br
-  %br
-  Phone # (Not Yours!): 
-  %br
-  #{text_field :receiver, :phone_number, :placeholder => "(234) 123-2345"}
-  %br
-  %br
-  %br
-  = form.label "Personal Message:"
-  %br
-  = form.text_area :message, :placeholder => "Happy Birthday, Cookie. Go buy yourself a cup of coffee on me. Talk soon!"
-  %span#text_char_count 160
+  = form.label "Message:" 
+  %span#text_char_count 160 characters left
+  .inputs
+    = form.text_area :message, :placeholder => "Happy Birthday, Cookie. Go buy yourself a cup of coffee on me. Talk soon!"
   %br
   = hidden_field :vendor, :id, :value => params[:vendor][:id]
-  = form.submit "Preview Message", :class => 'previewbutton'
+  = form.submit "Preview Message", :class => 'previewbutton right'
+  .clr

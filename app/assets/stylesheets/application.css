@@ -11,11 +11,19 @@ body {
   background-image:url('bg-tile.gif');
 }
 
+div.clr {
+  clear:both;
+}
+
 h1 h2 h3 h4 h5 h6 { font-weight: bold; }
 
 .clr { clear:both }
 
 #header {
+}
+
+.right {
+  float: right;
 }
 
 .content_wrapper {
@@ -149,4 +157,42 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
 
 #new_account_field {
 	padding: 20px;
+}
+
+input[type='text'], textarea{
+  padding: 5px;
+  font-size: large;
+}
+
+.inputs input, .inputs textarea{
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.inputs textarea {
+  width: 600px;
+  height: 150px;
+}
+
+.inputs input.inline {
+}
+
+#text_char_count {
+  float:right;
+  font-size: smaller;
+  font-weight: light;
+  color: gray;
+}
+
+#gift_form_container {
+  width: 650px;
+  margin: auto;
+  padding: 10px;
+  background: white;
+
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: rgb(207, 206, 206) 0px 0px 3px;
+  box-shadow: rgb(207, 206, 206) 0px 0px 3px;
 }
