@@ -1,3 +1,12 @@
 = stylesheets('pages')
+.home_page_image_container
+  .phone_image_wrapper
+    = image_tag 'home_iphone.png', :class => "home_iphone"
+  .actions_wrapper
+    %h1#purpose SMS a $5 Gift Instantly
+    %h2#tagline make someone smile today
+    #send_five_now_wrapper= link_to 'Send $5 Now', new_gift_path
+    #learn_more_wrapper= link_to "Learn More", "/learn_more", :id => 'learn_more'
 
-= link_to "Learn More", "/learn_more"
+.clr
+

@@ -31,4 +31,10 @@ $(function() {
     $("#logo").css('cursor', 'pointer');
   });
 
+  //$("#new_gift_button").click(function(event) {
+  //  form = $('#new_gift_button').closest("form");
+  //  window.location.replace(form[0].action);
+  //  event.preventDefault();
+  //});
+
 })
