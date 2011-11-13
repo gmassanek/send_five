@@ -24,12 +24,15 @@ class GiftsController < ApplicationController
     @gift.giver = @giver
 
     if @gift.save
-      redirect_to gifts_path
+      redirect_to gift_path(@gift)
     else
       @vendors = Vendor.available
       render :new
     end
-
+  end
+  
+  def show
+    @gift = Gift.find(params[:id])
   end
 
 end
