@@ -27,8 +27,7 @@ $(function() {
 
   $("#logo").click(function() {
     window.location.replace('/');
-  })
-  .mouseover(function() {
+  }).mouseover(function() {
     $("#logo").css('cursor', 'pointer');
   });
 
