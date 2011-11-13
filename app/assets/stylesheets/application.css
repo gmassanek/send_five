@@ -71,9 +71,9 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
 
 
 
-.vendor_button {
+.button {
   display: block;
-  width: 250px;
+  width: 350px;
   height: 50px;
   margin: 10px auto 0px;
   -webkit-border-radius: 5px;
@@ -87,13 +87,11 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
   font: 32px "Arvo",serif;
   padding: 16px 40px 12px 40px;
   font-weight: bold;
+  text-align: center;
 }
 
-.vendor_button:hover {
+.button:hover {
   background: -webkit-linear-gradient(top, #FFEF5C, #DFCD21);
   color: #117799;
   text-shadow: 1px 1px #69D6FF; 
 }
-
-
-
