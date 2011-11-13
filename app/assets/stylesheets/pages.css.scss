@@ -73,11 +73,13 @@ img.home_iphone {
 #send_five_now_wrapper {
   margin: 0px auto;
   text-align: center;
+  vertical-align: middle;
 }
 
 #send_five_now_wrapper a{
   display: block;
   width: 250px;
+  height: 50px;
   margin: 10px auto 0px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -87,8 +89,9 @@ img.home_iphone {
   color: #006699;
   text-decoration: none;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
-  font: 24px/40px "Museo-700i",Georgia,serif;
+  font: 32px "Arvo",serif;
   padding: 16px 40px 12px 40px;
+  font-weight: bold;
 }
 
 #send_five_now_wrapper a:hover {
