@@ -26,6 +26,10 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
   float: right;
 }
 
+.center {
+  margin: 0 auto;
+}
+
 .content_wrapper {
   width: 960px;
   margin: 0 auto;
@@ -76,8 +80,6 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
 #main_content {
   margin-top: -325px;
 }
-
-
 
 .button {
   display: block;
@@ -170,7 +172,7 @@ input[type='text'], textarea{
 }
 
 .inputs textarea {
-  width: 600px;
+  width: 580px;
   height: 150px;
 }
 
@@ -185,7 +187,7 @@ input[type='text'], textarea{
 }
 
 #gift_form_container {
-  width: 650px;
+  width: 615px;
   margin: auto;
   padding: 10px;
   background: white;
@@ -195,4 +197,36 @@ input[type='text'], textarea{
 
   -webkit-box-shadow: rgb(207, 206, 206) 0px 0px 3px;
   box-shadow: rgb(207, 206, 206) 0px 0px 3px;
+}
+
+#create_account {
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+#sign_up_thanks {
+  width: 400px;
+  padding: 10px;
+  margin: 0 auto;
+  background: #F1FF77;
+  border: 2px solid #FFEF5C;
+  text-align: center;
+}
+
+.instructions {
+  width: 620px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.show  {
+  display: block;
+  margin-left: 20px;
+  padding: 10px;
+}
+
+.pay_and_send_wrapper {
+  width: 400px;
+  margin: 0 auto;
 }

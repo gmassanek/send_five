@@ -1,6 +1,10 @@
 = stylesheets('gifts')
 #gift_form_container
   - if params[:vendor].present?
+    .instructions
+      Choose what gift you would like to send
     = render 'text_message_form'	
   - else
+    .instructions
+      Choose what gift you would like to send
     = render 'vendor_form'

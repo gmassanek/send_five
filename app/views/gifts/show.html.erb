@@ -1,17 +1,31 @@
-<h1>Preview Your Message and Send!</h1></br>
+<%= stylesheets('gifts') %>
+<div id="sign_up_thanks">
+  <h1 >Preview your message and send now!</h1>
+</div>
+<br/>
+<div id="gift_form_container">
+  From: 
+    <div class="show">
+      <%= @gift.giver.first_name %>
+    </div>
+  To: 
+    <div class="show">
+      <%= @gift.receiver.first_name %>
+      at
+      <%= @gift.receiver.phone_number %>
+    </div>
+  Message: 
+    <div class="show">
+      <% if @gift.vendor.charity %> 
+        <%= @gift.charity_text_message %>
+      <% else %>
+        <%= @gift.text_message_1 %></br></br>
+        <%= @gift.text_message_2 %>
+      <% end %>
+    </div>
 
-From: <%= @gift.giver.first_name %></br>
-To: <%= @gift.receiver.first_name %></br>
-Message: <% if @gift.vendor.charity %> 
-          <%= @gift.charity_text_message %>
-        <% else %>
-          <%= @gift.text_message_1 %></br>
-          <%= @gift.text_message_2 %></br>
-        <% end %>
-<hr>
-
-<h1>Make Someone's Day!</h1><br>
-
-<div class="paybutton">
-<%= link_to "Pay and Send $5 Now", new_user_url %>
+    <br/>
+  <div class="paybutton pay_and_send_wrapper">
+    <%= link_to "Pay and Send $5 Now", new_user_url %>
+  </div>
 </div>

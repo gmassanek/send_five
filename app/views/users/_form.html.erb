@@ -1,24 +1,25 @@
 <br>
 <%= form_for(@user) do |f| %>
 
-<%= f.label :first_name %>
-<%= f.text_field :first_name %></br>
+<%= f.label "Name"%>
+<div class="inputs">
+  <%= f.text_field :first_name, :placeholder => "First" %>
+  <%= f.text_field :last_name, :placeholder => "Last"%>
+</div>
 
-<%= f.label :last_name %>
-<%= f.text_field :last_name %></br>  
 
 <%= f.label :phone_number %>
-<%= f.text_field :phone_number %></br>  
+<div class="inputs"><%= f.text_field :phone_number, :placeholder => '+14448887722' %></div>
 
 <%= f.label :email %>
-<%= f.text_field :email %></br>  
+<div class="inputs"><%= f.text_field :email, :placeholder => "cookie@monster.com" %></div>
 
 <%= f.label :password %>
-<%= f.password_field :password %></br>  
+<div class="inputs"><%= f.text_field :password %></div>
 
 <%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %></br>  
+<div class="inputs"><%= f.text_field :password_confirmation %></div>
 
-<%= f.submit "Create Account" %>
+<%= f.submit "Create Account",:id => "create_account",  :class => "previewbutton" %>
 
 <% end %>

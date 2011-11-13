@@ -1,8 +1,15 @@
-<h1 align="center">Success! You've just made someone smile.</h1>
+<%= stylesheets('gifts') %>
+<div id="sign_up_thanks">
+  <h1 >Success! You've just made someone smile.</h1>
+</div>
 <br>
 <hr>
 <br>
-Now sign up for an account and send $5 to the rest of your friends and family.
+<div class="instructions">
+  Now sign up for an account and send $5 to the rest of your friends and family.
+</div>
 </br>
 
-<%= render 'form'%>
+<div id="gift_form_container">
+  <%= render 'form'%>
+</div>
