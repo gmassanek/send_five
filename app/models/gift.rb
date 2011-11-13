@@ -37,6 +37,7 @@ class Gift < ActiveRecord::Base
   end
 
   def send_texts
+    puts "hello"
     if vendor.charity?
       TwilioHelper::send_text '+13128542448', receiver.phone_number, charity_text_message
    else
