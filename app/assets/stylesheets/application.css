@@ -161,6 +161,12 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
 	padding: 20px;
 }
 
+input[type='text']:focus {
+  border: 1px solid #667799;
+  padding: 5px;
+  font-size: large;
+}
+
 input[type='text'], textarea{
   padding: 5px;
   font-size: large;
