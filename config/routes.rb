@@ -4,6 +4,8 @@ SendFive::Application.routes.draw do
   resources :gifts
   resources :users
   
+  match "/learn_more" => "pages#learn_more"
+  
   resources :sessions, :only => [:new, :create, :destroy]
 
 end

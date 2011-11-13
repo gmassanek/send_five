@@ -3,7 +3,7 @@
 From: <%= @gift.giver.first_name %></br>
 To: <%= @gift.receiver.first_name %></br>
 Message: <% if @gift.vendor.charity %> 
-          <%= @gift.charity.text_message %>
+          <%= @gift.charity_text_message %>
         <% else %>
           <%= @gift.text_message_1 %></br>
           <%= @gift.text_message_2 %></br>
