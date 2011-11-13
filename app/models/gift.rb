@@ -13,7 +13,7 @@ class Gift < ActiveRecord::Base
              :foreign_key => 'giver_id'
   
   before_create :associate_code
-#  after_create :send_texts
+  after_create :send_texts
 
   def associate_code
     if vendor.nil?
@@ -36,14 +36,14 @@ class Gift < ActiveRecord::Base
     self.code = code
   end
 
-#  def send_texts
-#    if vendor.charity?
-#      TwilioHelper::send_text '+13128542448', receiver.phone_number, charity_text_message
-#   else
-#     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_1
-#     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_2
-#   end
-#  end
+  def send_texts
+    if vendor.charity?
+      TwilioHelper::send_text '+13128542448', receiver.phone_number, charity_text_message
+   else
+     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_1
+     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_2
+   end
+  end
 
   def sender_name
     giver.first_name
