@@ -1,0 +1,4 @@
+$("#gift_form_container").fadeOut("fast", function() {
+  $("#gift_form_container").html("<%= escape_javascript(render('text_message_form')) %>");
+  $("#gift_form_container").fadeIn("slow");
+});

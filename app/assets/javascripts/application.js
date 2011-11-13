@@ -17,4 +17,12 @@ $(function() {
     $("#text_char_count").html(length)
   });
 
+  $(".vendor_button").click(function(event) {
+    var button_id = event.target.id;
+    var id = button_id.split("_")[1];
+    $("#vendor_id").val(id);
+    $("#vendor_form").submit();
+    event.preventDefault();
+  });
+
 })

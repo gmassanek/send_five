@@ -1,6 +1,4 @@
-= form_tag(new_gift_path, :method => "get") do 
-
-	= label_tag :vendor
-	= collection_select :vendor, :id, @vendors, :id, :name , :prompt => "Select a vendor or charity"
-	= submit_tag "Submit"
-	%br
+= form_tag(new_gift_path, :method => "get", :remote => true, :id => "vendor_form") do 
+  = hidden_field :vendor, :id
+  - @vendors.each do |vendor|
+    = render 'vendor_button', :vendor => vendor

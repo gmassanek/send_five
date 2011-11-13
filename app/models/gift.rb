@@ -54,11 +54,11 @@ class Gift < ActiveRecord::Base
   end
 
   def text_message_1
-    "#{receiver.first_name}, #{sender_name} sent you $5 to #{vendor.name} through SendFive! #{sender_name} says:\n #{message}"
+    "#{sender_name} sent you $5 to #{vendor.name} through sendfiveNOW!\n'#{message}'"
   end
 
   def text_message_2
-    "To redeem your gift, go to your local #{vendor.name} and present the following code:\n   -------  \n#{code.code_number}"
+    "To redeem your gift, go to your local #{vendor.name} and present the following code:\n   -----  \n#{code.code_number}"
   end
 
 end

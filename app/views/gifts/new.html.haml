@@ -1,5 +1,5 @@
--	if params[:vendor].present?
-	= render 'text_message_form'	
--	else
-	= render 'vendor_form'
-
+#gift_form_container
+  - if params[:vendor].present?
+    = render 'text_message_form'	
+  - else
+    = render 'vendor_form'
