@@ -1,6 +1,6 @@
-## To contribute
+# To contribute
 
-### Pull Latest Changes
+### Pull Latest Changes and Pushing New Ones
 
 1. `git pull`
 2. make your changes
