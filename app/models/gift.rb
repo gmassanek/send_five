@@ -13,7 +13,7 @@ class Gift < ActiveRecord::Base
              :foreign_key => 'giver_id'
   
   before_create :associate_code
-  after_create :send_texts
+  #after_create :send_texts
 
   def associate_code
     if vendor.nil?
@@ -62,4 +62,19 @@ class Gift < ActiveRecord::Base
     "To redeem your gift, go to your local #{vendor.name} and present the following code:\n   -----  \n#{code.code_number}"
   end
 
+  def paypal_url(return_url, gift_id, notify_url)
+    values = {
+      :business => "BRE79W46WYY6A",
+      :return => notify_url,
+      :amount => 5,
+      :shipping => 0.5,
+      :currency_code => "USD",
+      :item_name => "Send Five Text Message Gift",
+      :cmd => "_xclick",
+      :item_number => gift_id,
+      :notify_url => notify_url,
+    }
+    "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+  end
+ 
 end

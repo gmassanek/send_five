@@ -14,7 +14,7 @@ class GiftsController < ApplicationController
 
   end
 
-  def create
+   def create
     @receiver = User.find_by_phone_number(params[:receiver][:phone_number])
     if @receiver.nil?
       @receiver = User.create(params[:receiver])
@@ -40,4 +40,23 @@ class GiftsController < ApplicationController
     @gift = Gift.find(params[:id])
   end
 
+  def send_to_paypal
+    @gift = Gift.find(params[:id])
+    redirect_to @gift.paypal_url(new_user_url, @gift.id, receive_from_paypal_url) 
+  end
+
+  def receive_from_paypal
+    @gift = Gift.find(params[:item_number])
+    if params[:payment_status] == "Completed"
+      @gift.send_texts
+      redirect_to new_user_url
+    else
+      redirect_to root_url
+      flash[:notice] = "There was an error with your payment. Please try again."
+    end
+  end
+  
 end
+
+
+

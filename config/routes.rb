@@ -5,7 +5,10 @@ SendFive::Application.routes.draw do
   resources :users
   
   match "/learn_more" => "pages#learn_more"
-  
+
   resources :sessions, :only => [:new, :create, :destroy]
 
+  get "send_to_paypal" => "gifts#send_to_paypal"
+
+  match "receive_from_paypal" => "gifts#receive_from_paypal"
 end

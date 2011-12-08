@@ -25,7 +25,12 @@
     </div>
 
     <br/>
-  <div class="paybutton pay_and_send_wrapper">
-    <%= link_to "Pay and Send $5 Now", new_user_url %>
+
+  
+  <div class="paybutton pay_and_send_wrapper"> 
+    <%= link_to "Pay with PayPal", send_to_paypal_url(:id => @gift.id) %>
   </div>
+<br>
+  You will be taken to the PayPal site to pay with your Credit Card or PayPal account.
+
 </div>
