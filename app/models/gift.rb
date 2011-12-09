@@ -65,7 +65,7 @@ class Gift < ActiveRecord::Base
   def paypal_url(return_url, gift_id, notify_url)
     values = {
       :business => "BRE79W46WYY6A",
-      :return => notify_url,
+      :return => return_url,
       :amount => 5,
       :shipping => 0.5,
       :currency_code => "USD",
@@ -75,6 +75,10 @@ class Gift < ActiveRecord::Base
       :notify_url => notify_url,
     }
     "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
+  end
+
+  def paypal_listener_response(params)
+    "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate" + params.to_query 
   end
  
 end
