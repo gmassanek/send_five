@@ -42,7 +42,7 @@ class GiftsController < ApplicationController
 
   def send_to_paypal
     @gift = Gift.find(params[:id])
-    redirect_to @gift.paypal_url(receive_from_paypal_url, @gift.id, paypal_listener_url) 
+    redirect_to @gift.paypal_url(new_user_url, @gift.id, receive_from_paypal_url) 
   end
 
   def receive_from_paypal
