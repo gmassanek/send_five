@@ -42,7 +42,7 @@ class GiftsController < ApplicationController
 
   def send_to_paypal
     @gift = Gift.find(params[:id])
-    redirect_to @gift.paypal_url(new_user_url, @gift.id, receive_from_paypal_url) 
+    redirect_to @gift.paypal_url(new_user_url, @gift.id, paypal_listener_url) 
   end
 
   #def receive_from_paypal
@@ -57,7 +57,7 @@ class GiftsController < ApplicationController
   #end
 
   def paypal_listener
-    paypal_details = params
+    paypal_details = request.raw_data
     if params == "NOTIFIED"
       @gift = Gift.find(paypal_details[:item_number])
       if paypal_details[:payment_status] == "Completed"
@@ -67,8 +67,11 @@ class GiftsController < ApplicationController
         redirect_to root_url
       end
     else
-      reply_to_paypal = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate" + params.to_query 
-      redirect_to reply_to_paypal
+      RestClient.post "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate", :params => paypal_details 
+
+     # reply_to_paypal = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate" + params.to_query 
+
+     # redirect_to reply_to_paypal
     end
   end
   
