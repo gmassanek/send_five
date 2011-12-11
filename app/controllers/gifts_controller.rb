@@ -57,7 +57,7 @@ class GiftsController < ApplicationController
   #end
 
   def paypal_listener
-    paypal_details = request.raw_data
+    paypal_details = request.raw_post
     if params == "NOTIFIED"
       @gift = Gift.find(paypal_details[:item_number])
       if paypal_details[:payment_status] == "Completed"
