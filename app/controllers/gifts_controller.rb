@@ -67,7 +67,20 @@ class GiftsController < ApplicationController
         redirect_to root_url
       end
     else
-      RestClient.post "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate", :params => paypal_details 
+      #RestClient.post "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate", :params => paypal_details 
+      uri = URI.parse("https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate")
+
+      http = Net::HTTP.new(uri.host, uri.port)
+      http.open_timeout = 60
+      http.read_timeout = 60
+      http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+      http.use_ssl = true
+      response = http.post(uri.request_uri, paypal_details,
+                           'Content-Length' => "#{paypal_details.size}"
+                          ).body
+      puts response.inspect
+
+      redirect_to root_url
 
      # reply_to_paypal = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_notify-validate" + params.to_query 
 

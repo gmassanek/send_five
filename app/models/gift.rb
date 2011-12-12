@@ -72,7 +72,7 @@ class Gift < ActiveRecord::Base
       :item_name => "Send Five Text Message Gift",
       :cmd => "_xclick",
       :item_number => gift_id,
-      :notify_url => notify_url,
+      :notify_url => notify_url
     }
     "https://www.sandbox.paypal.com/cgi-bin/webscr?" + values.to_query
   end
