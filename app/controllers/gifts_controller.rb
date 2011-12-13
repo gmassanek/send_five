@@ -59,7 +59,7 @@ class GiftsController < ApplicationController
   def paypal_listener
     @gift = Gift.find(params[:item_number])
     if params[:payment_status] == "Completed" && @gift.sent == false
-      @gift.send_texts
+    #  @gift.send_texts
       @gift.sent = true
     else
       
