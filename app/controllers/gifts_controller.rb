@@ -37,7 +37,7 @@ class GiftsController < ApplicationController
   end
   
   def show
-    @gift = Gift.find(params[:id])
+    @gift = Gift.find(params[:id].to_i)
   end
 
   def send_to_paypal
