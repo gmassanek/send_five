@@ -60,7 +60,7 @@ class GiftsController < ApplicationController
     @gift = Gift.find(params[:item_number])
     if params[:payment_status] == "Completed" && @gift.sent == false
       @gift.send_texts
-      @gift.sent = true
+      @gift.update_attribute(:sent, true)
       render :nothing => true
     else
       render :nothing => true      
