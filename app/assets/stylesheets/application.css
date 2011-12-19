@@ -120,11 +120,10 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
   text-align: center;
 }
 
-.paybutton {
+#pay-button {
   display: block;
   width: 350px;
-  height: 50px;
-  margin: 20px 0px;
+  margin: 0 auto 0 auto;
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background: -webkit-linear-gradient(top, #FFEF5C, #F8FF92);
@@ -151,7 +150,7 @@ h1 h2 h3 h4 h5 h6 { font-weight: bold; }
   text-shadow: 1px 1px #69D6FF; 
 }
 
-.paybutton:hover {
+#pay-button:hover {
   background: -webkit-linear-gradient(top, #FFEF5C, #DFCD21);
   color: #117799;
   text-shadow: 1px 1px #69D6FF; 
@@ -198,6 +197,68 @@ input[type='text'], textarea{
 
   -webkit-box-shadow: rgb(207, 206, 206) 0px 0px 3px;
   box-shadow: rgb(207, 206, 206) 0px 0px 3px;
+}
+
+#payment_form {
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 20px;
+  border-top: 1px solid gray;
+}
+
+.payment-errors {
+  color: red;
+}
+
+#payment_details {
+  float: left;
+}
+
+#payment_details_email {
+  margin: 0 0 15px 0;
+}
+
+#payment_details_card_number {
+  float: left;
+  margin: 0 5px 15px 0;
+
+}
+
+#payment_details_CVV {
+  float: left;
+}
+
+#card_images {
+  margin: 0 0 15px 0;
+}
+
+#payment_details_expiration {
+  margin: 0 0 20px 0;
+}
+
+#payment_summary {
+  float: left;
+  margin-left: 10px;
+}
+
+#summary_price {
+  font-size: 15px;
+  height: 39px;
+  line-height: 39px;
+  margin-bottom: 15px
+}
+
+#summary_fee {
+  font-size: 15px;
+  height: 39px;
+  line-height: 39px;
+  margin-bottom: 15px;
+}
+
+#summary_total {
+  font-size: 20px;
+  height: 39px;
+  line-height: 39px;
 }
 
 #create_account {

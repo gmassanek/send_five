@@ -8,6 +8,22 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+function stripeResponseHandler(status, response) {
+    if (response.error) {
+        //show the errors on the form
+        $(".payment-errors").html(response.error.message);
+        $('#pay-button').removeAttr("disabled");
+    } else {
+        var form$ = $("#payment-form");
+        // token contains id, last4, and card type
+        var token = response['id'];
+        // insert the token into the form so it gets submitted to the server
+        form$.append("<input type='hidden' name='stripeToken' value='" + token + "'/>");
+        // and submit
+        form$.get(0).submit();
+    }
+}
 $(function() {
 
   $("#gift_message").keyup(function() {
@@ -37,4 +53,23 @@ $(function() {
   //  event.preventDefault();
   //});
 
+//submit payment to Stripe
+  $("#payment-form").submit(function(event) {
+    // disable the submit button to prevent repeated clicks
+   $('#pay-button').attr("disabled", "disabled");
+
+    var amount = 599; //amount you want to charge in cents
+    Stripe.createToken({
+        number: $('#card_number').val(),
+        cvc: $('#card_code').val(),
+        exp_month: $('#card_month').val(),
+        exp_year: $('#card_year').val()
+    }, amount, stripeResponseHandler);
+
+    // prevent the form from submitting with the default action
+    return false;
+  });
 })
+
+
+

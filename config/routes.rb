@@ -8,6 +8,8 @@ SendFive::Application.routes.draw do
 
   resources :sessions, :only => [:new, :create, :destroy]
 
+  post "/pay_for_gift" => "gifts#pay_for_gift"
+
   get "send_to_paypal" => "gifts#send_to_paypal"
 
   match "receive_from_paypal" => "gifts#receive_from_paypal"

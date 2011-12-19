@@ -1,6 +1,6 @@
 <%= stylesheets('gifts') %>
 <div id="sign_up_thanks">
-  <h1 >Preview your message and send now!</h1>
+  <h1 >Preview your message, pay, and send now!</h1>
 </div>
 <br/>
 <div id="gift_form_container">
@@ -8,7 +8,7 @@
     <div class="show">
       <%= @gift.giver.first_name %>
     </div>
-  To: 
+  To:  
     <div class="show">
       <%= @gift.receiver.first_name %>
       at
@@ -26,11 +26,34 @@
 
     <br/>
 
-  
-  <div class="paybutton pay_and_send_wrapper"> 
-    <%= link_to "Pay with PayPal", send_to_paypal_url(:id => @gift.id) %>
-  </div>
-<br>
-  You will be taken to the PayPal site to pay with your Credit Card or PayPal account.
+    <div id="payment_form">
+      <div class="payment-errors"></div>
+      <div id="payment_details">
+        <%= form_tag pay_for_gift_url, :id => "payment-form" do %>
 
-</div>
+          <%= hidden_field_tag :id, @gift.id %>
+         
+          <div id="payment_details_email"><%= text_field_tag :email, nil, :placeholder => 'Your Email', :size => 30 %></div>
+
+          <div id="payment_details_card_number"><%= text_field_tag :card_number, nil, :name => nil, :placeholder => "Credit Card Number", :maxlength => 16, :size => 20 %></div>
+
+          <div id="payment_details_CVV"><%= text_field_tag :card_code, nil, :name => nil, :placeholder => "CVV", :class => 'inline', :size => 4, :maxlength => 4 %></div>
+
+          <div id="card_images"><%= image_tag("creditcards.png") %></div>
+          
+          <div id="payment_details_expiration"><%= label_tag :card_expiration, "Expires On:" %>
+            <%= select_month nil, {:add_month_numbers => true}, {:name => nil, :id => "card_month"} %>
+            <%= select_year nil, {:start_year => Date.today.year, :end_year => Date.today.year+15}, {:name => nil, :id => "card_year"} %>
+          </div>
+      </div>
+      <div id="payment_summary">
+        <div id="summary_price">Gift Card: $5.00</div>
+        <div id="summary_fee">Fee: $0.99</div>
+        <div id="summary_total">Total: $5.99</div>
+      </div>
+      
+        <%= submit_tag "Pay and Send Text!", :id => "pay-button" %>
+
+      <% end %>
+   </div>  
+  </div>

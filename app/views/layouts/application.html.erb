@@ -6,6 +6,11 @@
   <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic', :media => 'screen' %>
   <%= yield(:head) %>
   <%= javascript_include_tag "application" %>
+  <script type="text/javascript" src="https://js.stripe.com/v1/"></script>
+  <script type="text/javascript">
+    // this identifies your website in the createToken call below
+    Stripe.setPublishableKey('pk_RbRFD3om78PVOduOlqSTnDEEEk1ab');
+  </script>
   <%= csrf_meta_tags %>
   <script type="text/javascript">
 

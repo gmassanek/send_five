@@ -15,9 +15,14 @@ class GiftsController < ApplicationController
   end
 
   def create
-    @receiver = User.find_by_phone_number(params[:receiver][:phone_number])
+    phone_number = "+1" + params[:receiver][:area_code] + params[:receiver][:phone_number1] + params[:receiver][:phone_number2]
+    @receiver = User.find_by_phone_number(phone_number)
+    #    @receiver = User.find_by_phone_number(params[:receiver][:phone_number])
     if @receiver.nil?
-      @receiver = User.create(params[:receiver])
+      @receiver = User.new
+      @receiver.phone_number = phone_number
+      @receiver.first_name = params[:receiver][:first_name]
+      @receiver.save
     end
 
     @giver = User.create(params[:giver])
@@ -38,6 +43,20 @@ class GiftsController < ApplicationController
   
   def show
     @gift = Gift.find(params[:id].to_i)
+  end
+
+  def pay_for_gift
+    @gift = Gift.find(params[:id])
+    token = params[:stripeToken]
+    Stripe.api_key = "b2vI5JBAumh3bvY7xP3iE0Hnvq2oJ2BE"
+    charge = Stripe::Charge.create(
+      :amount => 599, # amount in cents, again
+      :currency => "usd",
+      :card => token,
+      :description => @gift.id
+    )
+    @gift.send_texts 
+    redirect_to new_user_url
   end
 
   def send_to_paypal

@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'rest-client', "~> 1.6.7"
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -18,6 +17,7 @@ end
 gem 'heroku'
 gem 'haml'
 gem 'twilio-ruby'
+gem 'stripe'
 
 gem 'bcrypt-ruby', '~> 3.0.0'
 

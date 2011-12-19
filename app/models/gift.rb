@@ -37,12 +37,11 @@ class Gift < ActiveRecord::Base
   end
 
   def send_texts
-    puts "hello"
     if vendor.charity?
-      TwilioHelper::send_text '+13128542448', receiver.phone_number, charity_text_message
+      TwilioHelper::send_text '+13132215621', receiver.phone_number, charity_text_message
    else
-     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_1
-     TwilioHelper::send_text '+13128542448', receiver.phone_number, text_message_2
+     TwilioHelper::send_text '+13132215621', receiver.phone_number, text_message_1
+     TwilioHelper::send_text '+13132215621', receiver.phone_number, text_message_2
    end
   end
 
@@ -55,7 +54,7 @@ class Gift < ActiveRecord::Base
   end
 
   def text_message_1
-    "#{sender_name} sent you $5 to #{vendor.name} through sendfiveNOW!\n'#{message}'"
+    "#{sender_name} sent you $5 to #{vendor.name} through sendfiveNOW! #{sender_name} says:\n '#{message}'"
   end
 
   def text_message_2

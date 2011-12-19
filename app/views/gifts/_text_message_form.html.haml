@@ -10,7 +10,12 @@
   To:
   .inputs
     = text_field :receiver, :first_name, :placeholder => "Betty"
-    = text_field :receiver, :phone_number, :placeholder => "(234) 123-2345", :class => 'inline'
+  %br
+  Phone Number:
+  .inputs
+    = text_field :receiver, :area_code, :placeholder => "123", :class => 'inline', :maxlength => 3 
+    = text_field :receiver, :phone_number1, :placeholder => "234", :class => 'inline', :maxlength => 3
+    = text_field :receiver, :phone_number2, :placeholder => "3456", :class => 'inline', :maxlength => 4
   %br
   = form.label "Message:" 
   %span#text_char_count 160 characters left
