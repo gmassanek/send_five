@@ -48,7 +48,7 @@ class GiftsController < ApplicationController
   def pay_for_gift
     @gift = Gift.find(params[:id])
     token = params[:stripeToken]
-    Stripe.api_key = "b2vI5JBAumh3bvY7xP3iE0Hnvq2oJ2BE"
+    Stripe.api_key = ENV['stripe_api_key']
     charge = Stripe::Charge.create(
       :amount => 599, # amount in cents, again
       :currency => "usd",

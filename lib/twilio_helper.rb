@@ -1,7 +1,7 @@
 class TwilioHelper
   
-  ACCOUNT_SID = 'AC7ab071a2d1b24ab28731dc4f6311e218'
-  AUTH_TOKEN = '32e6f4fc57a9d263b65d3879204f4406'
+  ACCOUNT_SID = ENV['twilio_ACCOUNT_SID']
+  AUTH_TOKEN = ENV['twilio_AUTH_TOKEN']
 
   def self.new_client
     Twilio::REST::Client.new ACCOUNT_SID, AUTH_TOKEN
