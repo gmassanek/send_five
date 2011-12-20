@@ -27,6 +27,12 @@
     <br/>
 
     <div id="payment_form">
+      <div id="payment_summary">
+        <div id="summary_price">Gift Card: $5.00</div>
+        <div id="summary_fee">Fee: $0.99</div>
+        <div id="summary_total">Total: $5.99</div>
+      </div>
+      
       <div class="payment-errors"></div>
       <div id="payment_details">
         <%= form_tag pay_for_gift_url, :id => "payment-form" do %>
@@ -46,13 +52,7 @@
             <%= select_year nil, {:start_year => Date.today.year, :end_year => Date.today.year+15}, {:name => nil, :id => "card_year"} %>
           </div>
       </div>
-      <div id="payment_summary">
-        <div id="summary_price">Gift Card: $5.00</div>
-        <div id="summary_fee">Fee: $0.99</div>
-        <div id="summary_total">Total: $5.99</div>
-      </div>
-      
-        <%= submit_tag "Pay and Send Text!", :id => "pay-button" %>
+              <%= submit_tag "Pay and Send Text!", :id => "pay-button" %>
 
       <% end %>
    </div>  

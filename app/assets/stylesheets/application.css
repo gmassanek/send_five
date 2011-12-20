@@ -201,6 +201,7 @@ input[type='text'], textarea{
 
 #payment_form {
   margin-right: auto;
+  width: 500px;
   margin-left: auto;
   padding-top: 20px;
   border-top: 1px solid gray;
@@ -238,8 +239,9 @@ input[type='text'], textarea{
 
 #payment_summary {
   float: left;
-  margin-left: 10px;
+  width: 200px;
 }
+
 
 #summary_price {
   font-size: 15px;
