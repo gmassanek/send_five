@@ -276,9 +276,11 @@ input[type='text'], textarea{
 }
 
 .instructions {
-  width: 620px;
-  margin: 0 auto;
+  width: 635px;
+  margin-right: auto;
+  margin-left: auto;
   margin-bottom: 10px;
+  line-height: 30px;
   text-align: center;
 }
 

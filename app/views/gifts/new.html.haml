@@ -5,6 +5,10 @@
       Choose what gift you would like to send
     = render 'text_message_form'	
   - else
-    .instructions
-      Choose what gift you would like to send
-    = render 'vendor_form'
+    - if @vendors.present?
+      .instructions
+        Choose what gift you would like to send
+      = render 'vendor_form'
+    - else
+      .instructions
+        We're sorry. We've been making too many people smile and are out of gift codes. Check back soon!
