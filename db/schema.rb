@@ -14,41 +14,41 @@
 ActiveRecord::Schema.define(:version => 20111213160038) do
 
   create_table "codes", :force => true do |t|
-    t.integer  "vendor_id"
-    t.integer  "gift_id"
-    t.string   "code_number"
-    t.boolean  "sent",        :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "vendor_id"
+    t.integer   "gift_id"
+    t.string    "code_number"
+    t.boolean   "sent",        :default => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "gifts", :force => true do |t|
-    t.integer  "giver_id"
-    t.integer  "receiver_id"
-    t.string   "message"
-    t.boolean  "random",      :default => false
-    t.string   "thank_you"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "sent",        :default => false
+    t.integer   "giver_id"
+    t.integer   "receiver_id"
+    t.string    "message"
+    t.boolean   "random",      :default => false
+    t.string    "thank_you"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "sent",        :default => false
   end
 
   create_table "users", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.string   "phone_number"
-    t.string   "email"
-    t.string   "password_digest"
-    t.boolean  "registered",      :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "first_name"
+    t.string    "last_name"
+    t.string    "phone_number"
+    t.string    "email"
+    t.string    "password_digest"
+    t.boolean   "registered",      :default => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "vendors", :force => true do |t|
-    t.string   "name"
-    t.boolean  "charity",    :default => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "name"
+    t.boolean   "charity",    :default => false
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
 end

@@ -1,9 +1,8 @@
-# To contribute
+# Send Five is a web app that allows users to send gift codes to any SMS enabled phone.
 
-### Pull Latest Changes and Pushing New Ones
+# To contribute:
 
-1. `git pull`
-2. make your changes
-3. `git add _______` # => either `git add .` to add all the changes, or `git add app/models/gift.rb` to add one file
-4. `git commit -m "_________________________"` to commit.  
-5. `git push`
+Change the ENV['stripe_api_key'] in gifts controller to a Stripe test key
+Change the ENV['twilio_ACCOUNT_SID'] and ENV['twilio_AUTH_TOKEN'] in lib/twilio_helper to your own Twilio account numbers
+
+
